@@ -5,7 +5,6 @@
 // Si dejas estos campos vacíos, el formulario mostrará el mensaje pero no guardará en base.
 
 window.CRYPTSTEG_CONFIG = {
-  SUPABASE_URL: "",
-  SUPABASE_ANON_KEY: "",
-  TABLE_NAME: "expo_registros"
+  SUPABASE_URL: "https://qhybeaqnowwvbgsobtos.supabase.co",
+  SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoeWJlYXFub3d3dmJnc29idG9zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg4NTY3OTAsImV4cCI6MjA5NDQzMjc5MH0.nlBmKu2IMn8ubv-Z3r_8Fa6hPcHPIgJam3y-CLhPCDI"
 };
