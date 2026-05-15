@@ -18,6 +18,7 @@
     <nav>
       <a href="#experiencia">Experiencia</a>
       <a href="#registro">Registro</a>
+      <a href="desafios.html">Desafíos</a>
       <a href="#qr">QR</a>
       <a href="#materiales">Materiales</a>
     </nav>
@@ -31,7 +32,7 @@
         <p class="lead">Un espacio para explorar cómo se protegen, ocultan y descifran mensajes mediante desafíos simples, visuales y participativos.</p>
         <div class="hero-actions">
           <a class="btn primary" href="#registro">Registrarme</a>
-          <a class="btn ghost" href="#qr">Ver QR de acceso</a>
+          <a class="btn ghost" href="desafios.html">Ir a desafíos</a>
         </div>
         <div class="mini-stats" aria-label="Ejes de la experiencia">
           <article><strong>01</strong><span>Criptografía</span></article>
@@ -132,38 +133,35 @@
 
         <button class="btn primary submit" type="submit">Enviar registro</button>
         <p id="formMsg" class="form-msg" role="status"></p>
+        <div id="registroGuardado" class="registro-guardado" hidden></div>
       </form>
     </section>
 
     <section id="qr" class="section qr-section">
       <div>
         <p class="eyebrow">Acceso rápido</p>
-        <h2>QR para la expo</h2>
-        <p>Cuando la página esté publicada en GitHub Pages, este QR apuntará automáticamente a la URL actual. Podés abrir esta página y mostrarlo en pantalla o imprimirlo.</p>
-        <button class="btn ghost" onclick="window.print()">Imprimir QR</button>
+        <h2>Ingresá a CRYPT-STEG</h2>
+        <p>Escaneá el código QR para acceder al formulario de registro y participar de los desafíos interactivos.</p>
       </div>
       <div class="qr-card">
         <div id="qrcode"></div>
         <p id="qrUrl">Cargando URL...</p>
+        <button class="btn primary qr-print" type="button" onclick="window.print()">Imprimir QR</button>
       </div>
     </section>
 
     <section id="materiales" class="section materials">
       <div class="section-title">
-        <p class="eyebrow">Material de apoyo</p>
+        <p class="eyebrow">Actividad interactiva</p>
         <h2>Desafíos criptográficos</h2>
-        <p>Archivos iniciales para acompañar la experiencia y proponer actividades durante la expo.</p>
+        <p>Ingresá a la sección de desafíos para resolver las consignas en línea y enviar tus respuestas.</p>
       </div>
-      <div class="material-grid">
-        <a class="material-card" href="assets/el-cifrador-de-barbie.pdf" target="_blank" rel="noopener">
-          <span>PDF</span>
-          <h3>El cifrador de Barbie</h3>
-          <p>Actividad breve con mensaje cifrado para resolver.</p>
-        </a>
-        <a class="material-card" href="assets/ejercicios-criptograficos.pdf" target="_blank" rel="noopener">
-          <span>PDF</span>
-          <h3>Ejercicios criptográficos</h3>
-          <p>Desafíos con pistas y espacios para completar.</p>
+      <div class="material-grid single">
+        <a class="material-card highlight challenge-link-card" href="desafios.html">
+          <span>COMENZAR</span>
+          <h3>Resolver desafíos interactivos</h3>
+          <p>Completá los mensajes descifrados y enviá tus respuestas desde la página web.</p>
+          <strong class="card-cta">Ir a desafíos →</strong>
         </a>
       </div>
     </section>
