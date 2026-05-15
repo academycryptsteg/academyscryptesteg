@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRYPT-STEG | Registro Expo</title>
+  <meta name="description" content="Registro para la experiencia CRYPT-STEG: criptografía y esteganografía." />
+  <link rel="icon" href="assets/iso-color.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="CRYPT-STEG inicio">
+      <img src="assets/iso-color.png" alt="Isotipo CRYPT-STEG" />
+      <span>CRYPT-STEG</span>
+    </a>
+    <nav>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#registro">Registro</a>
+      <a href="#qr">QR</a>
+      <a href="#materiales">Materiales</a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Expo interactiva · Criptografía y esteganografía</p>
+        <h1>Bienvenido a la experiencia <span>CRYPT-STEG</span></h1>
+        <p class="lead">Un espacio para explorar cómo se protegen, ocultan y descifran mensajes mediante desafíos simples, visuales y participativos.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#registro">Registrarme</a>
+          <a class="btn ghost" href="#qr">Ver QR de acceso</a>
+        </div>
+        <div class="mini-stats" aria-label="Ejes de la experiencia">
+          <article><strong>01</strong><span>Criptografía</span></article>
+          <article><strong>02</strong><span>Esteganografía</span></article>
+          <article><strong>03</strong><span>Desafíos</span></article>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img class="main-logo" src="assets/logo-color.png" alt="Logo CRYPT-STEG" />
+        <div class="shield-orbit">
+          <img src="assets/iso-color.png" alt="Símbolo CRYPT-STEG" />
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia" class="section two-col">
+      <div>
+        <p class="eyebrow">¿Qué vas a encontrar?</p>
+        <h2>Una propuesta para aprender haciendo</h2>
+        <p>La actividad combina explicación breve, exploración guiada y pequeños retos criptográficos para que cada visitante pueda participar, aunque no tenga conocimientos técnicos previos.</p>
+      </div>
+      <div class="cards">
+        <article class="info-card">
+          <h3>Cifrado</h3>
+          <p>Mensajes transformados para que solo puedan ser leídos por quien conozca el método o la clave.</p>
+        </article>
+        <article class="info-card">
+          <h3>Ocultamiento</h3>
+          <p>Ideas básicas de esteganografía: esconder información dentro de otros soportes o señales.</p>
+        </article>
+        <article class="info-card">
+          <h3>Desafíos</h3>
+          <p>Ejercicios para descubrir patrones, probar hipótesis y resolver mensajes cifrados.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="registro" class="section form-section">
+      <div class="section-title">
+        <p class="eyebrow">Alta de visitantes</p>
+        <h2>Formulario de registro</h2>
+        <p>Completá tus datos para participar y recibir material de la experiencia.</p>
+      </div>
+
+      <form id="registroForm" class="form-card">
+        <div class="form-grid">
+          <label>Nombre y apellido *
+            <input name="nombre" type="text" placeholder="Ej.: Juan Pérez" required />
+          </label>
+          <label>Correo electrónico *
+            <input name="email" type="email" placeholder="nombre@correo.com" required />
+          </label>
+          <label>Institución / empresa
+            <input name="institucion" type="text" placeholder="Opcional" />
+          </label>
+          <label>Rol
+            <select name="rol">
+              <option value="">Seleccionar</option>
+              <option>Estudiante</option>
+              <option>Docente</option>
+              <option>Profesional IT</option>
+              <option>Visitante</option>
+              <option>Otro</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="scale-block">
+          <h3>Nivel de conocimiento técnico</h3>
+          <p>0 = Nada · 3 = Solo uso · 5 = Entiendo su funcionamiento · 10 = Avanzado</p>
+          <div class="scale-list">
+            <label>Criptografía asimétrica <small>RSA, ECC, etc.</small><input name="conocimiento_asimetrica" type="range" min="0" max="10" value="0" /><output>0</output></label>
+            <label>Criptografía simétrica <small>AES, BitLocker</small><input name="conocimiento_simetrica" type="range" min="0" max="10" value="0" /><output>0</output></label>
+            <label>Criptografía post-cuántica <small>PQC</small><input name="conocimiento_pqc" type="range" min="0" max="10" value="0" /><output>0</output></label>
+            <label>Esteganografía <small>ocultamiento de información</small><input name="conocimiento_esteganografia" type="range" min="0" max="10" value="0" /><output>0</output></label>
+          </div>
+        </div>
+
+        <label>¿Qué te interesa más de la experiencia?
+          <select name="interes">
+            <option value="">Seleccionar</option>
+            <option>Aprender conceptos básicos</option>
+            <option>Resolver desafíos</option>
+            <option>Aplicaciones en seguridad informática</option>
+            <option>Criptografía post-cuántica</option>
+            <option>Esteganografía</option>
+          </select>
+        </label>
+
+        <label>Comentarios
+          <textarea name="comentarios" rows="4" placeholder="Contanos si querés recibir algo específico o si tenés alguna consulta."></textarea>
+        </label>
+
+        <div class="checks">
+          <label><input name="quiere_material" type="checkbox" /> Quiero recibir material de la actividad.</label>
+          <label><input name="acepta_contacto" type="checkbox" /> Acepto que me contacten por novedades de CRYPT-STEG.</label>
+        </div>
+
+        <button class="btn primary submit" type="submit">Enviar registro</button>
+        <p id="formMsg" class="form-msg" role="status"></p>
+      </form>
+    </section>
+
+    <section id="qr" class="section qr-section">
+      <div>
+        <p class="eyebrow">Acceso rápido</p>
+        <h2>QR para la expo</h2>
+        <p>Cuando la página esté publicada en GitHub Pages, este QR apuntará automáticamente a la URL actual. Podés abrir esta página y mostrarlo en pantalla o imprimirlo.</p>
+        <button class="btn ghost" onclick="window.print()">Imprimir QR</button>
+      </div>
+      <div class="qr-card">
+        <div id="qrcode"></div>
+        <p id="qrUrl">Cargando URL...</p>
+      </div>
+    </section>
+
+    <section id="materiales" class="section materials">
+      <div class="section-title">
+        <p class="eyebrow">Material de apoyo</p>
+        <h2>Desafíos criptográficos</h2>
+        <p>Archivos iniciales para acompañar la experiencia y proponer actividades durante la expo.</p>
+      </div>
+      <div class="material-grid">
+        <a class="material-card" href="assets/el-cifrador-de-barbie.pdf" target="_blank" rel="noopener">
+          <span>PDF</span>
+          <h3>El cifrador de Barbie</h3>
+          <p>Actividad breve con mensaje cifrado para resolver.</p>
+        </a>
+        <a class="material-card" href="assets/ejercicios-criptograficos.pdf" target="_blank" rel="noopener">
+          <span>PDF</span>
+          <h3>Ejercicios criptográficos</h3>
+          <p>Desafíos con pistas y espacios para completar.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="assets/logo-byn.png" alt="CRYPT-STEG" />
+    <p>CRYPT-STEG · Criptografía y Esteganografía</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
