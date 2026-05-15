@@ -218,3 +218,77 @@ footer a{color:var(--brand-2);font-weight:800}
     width:100%;
   }
 }
+
+/* v14: sección Charlas con flyer oficial */
+.talks-layout{
+  max-width:1180px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(280px,430px) 1fr;
+  gap:1.4rem;
+  align-items:stretch;
+}
+.talks-poster-card{
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.055);
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 22px 70px rgba(0,0,0,.26);
+}
+.talks-poster-card img{
+  width:100%;
+  height:100%;
+  min-height:520px;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+.talks-list{
+  display:grid;
+  gap:1rem;
+}
+.talk-card{
+  border:1px solid var(--line);
+  border-radius:28px;
+  padding:1.35rem;
+  background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));
+  box-shadow:0 16px 46px rgba(0,0,0,.18);
+}
+.talk-card.featured{
+  border-color:rgba(91,215,255,.38);
+  background:linear-gradient(180deg,rgba(20,157,242,.17),rgba(255,255,255,.045));
+}
+.talk-date{
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+  max-width:100%;
+  padding:.45rem .7rem;
+  border:1px solid rgba(91,215,255,.28);
+  border-radius:999px;
+  background:rgba(20,157,242,.14);
+  color:var(--brand-2);
+  font-weight:900;
+  font-size:.86rem;
+  letter-spacing:.02em;
+}
+.talk-card h3{
+  margin:1rem 0 .55rem;
+  font-size:clamp(1.3rem,2.6vw,2.15rem);
+  line-height:1.05;
+}
+.talk-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:1.04rem;
+  line-height:1.55;
+}
+@media(max-width:980px){
+  .talks-layout{grid-template-columns:1fr;}
+  .talks-poster-card{max-width:520px;margin:0 auto;width:100%;}
+  .talks-poster-card img{min-height:auto;}
+}
+@media(max-width:560px){
+  .talk-card{padding:1rem;border-radius:22px;}
+  .talk-date{font-size:.78rem;}
+}
