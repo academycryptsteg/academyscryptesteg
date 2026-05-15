@@ -1,6 +1,7 @@
 const cfg = window.CRYPTSTEG_CONFIG || {};
 const form = document.getElementById('registroForm');
 const msg = document.getElementById('formMsg');
+const registroGuardado = document.getElementById('registroGuardado');
 
 // Actualiza visualmente los rangos 0-10
 form.querySelectorAll('input[type="range"]').forEach(range => {
@@ -67,11 +68,19 @@ form.addEventListener('submit', async (e) => {
       return;
     }
 
-    const { error } = await supabaseClient
+    const { data, error } = await supabaseClient
       .from(cfg.TABLE_NAME || 'expo_registros')
-      .insert(payload);
+      .insert(payload)
+      .select('id,nombre,email')
+      .single();
 
     if(error) throw error;
+
+    localStorage.setItem('cryptsteg_registro', JSON.stringify({
+      id: data.id,
+      nombre: data.nombre,
+      email: data.email
+    }));
 
     form.reset();
     form.querySelectorAll('input[type="range"]').forEach(range => {
@@ -80,6 +89,10 @@ form.addEventListener('submit', async (e) => {
     });
     msg.className = 'form-msg ok';
     msg.textContent = 'Registro enviado correctamente. ¡Gracias por participar!';
+    if(registroGuardado){
+      registroGuardado.hidden = false;
+      registroGuardado.innerHTML = `<strong>ID de registro:</strong> ${data.id}<br><a class="btn ghost small" href="desafios.html">Continuar a los desafíos interactivos</a>`;
+    }
   }catch(error){
     console.error(error);
     msg.className = 'form-msg bad';
