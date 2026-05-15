@@ -75,7 +75,6 @@ async function cargarDatos(){
   ganadoresHistoricos = gData || [];
   construirRanking();
   renderRanking();
-  renderRespuestas();
   setPanelMsg('ok', `Datos cargados: ${participantes.length} participantes y ${respuestas.length} respuestas.`);
 }
 
@@ -152,31 +151,7 @@ function renderRanking(){
   `).join('');
 }
 
-function renderRespuestas(){
-  if(!respuestas.length){
-    respuestasLista.innerHTML = '<p class="notice warn">Todavía no hay respuestas para esta fecha.</p>';
-    return;
-  }
-
-  respuestasLista.innerHTML = respuestas.map(r => {
-    const estado = r.es_correcta === true ? 'Correcta' : r.es_correcta === false ? 'Incorrecta' : 'Pendiente';
-    return `
-      <article class="answer-card" data-id="${r.id}">
-        <div>
-          <strong>${escapeHtml(r.participante_nombre || 'Sin nombre')}</strong>
-          <span>${escapeHtml(r.desafio)} · ${estado} · ${Number(r.puntaje || 0)} punto</span>
-        </div>
-        <p><b>Respuesta:</b> ${escapeHtml(r.respuesta)}</p>
-        ${r.clave ? `<p><b>Clave:</b> ${escapeHtml(r.clave)}</p>` : ''}
-        ${r.observaciones ? `<p><b>Observaciones:</b> ${escapeHtml(r.observaciones)}</p>` : ''}
-        <div class="answer-actions">
-          <button class="btn ghost small" type="button" data-action="correcta" data-id="${r.id}">Correcta +1</button>
-          <button class="btn ghost small" type="button" data-action="incorrecta" data-id="${r.id}">Incorrecta 0</button>
-        </div>
-      </article>
-    `;
-  }).join('');
-}
+function renderRespuestas(){ return; }
 
 async function marcarRespuesta(id, correcta){
   const { error } = await supabaseClient
@@ -196,11 +171,13 @@ async function marcarRespuesta(id, correcta){
   await cargarDatos();
 }
 
-respuestasLista.addEventListener('click', (e) => {
-  const btn = e.target.closest('button[data-action]');
-  if(!btn) return;
-  marcarRespuesta(btn.dataset.id, btn.dataset.action === 'correcta');
-});
+if(respuestasLista){
+  respuestasLista.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-action]');
+    if(!btn) return;
+    marcarRespuesta(btn.dataset.id, btn.dataset.action === 'correcta');
+  });
+}
 
 async function guardarGanador(tipo, participante){
   const payload = {

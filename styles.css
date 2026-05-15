@@ -292,3 +292,81 @@ footer a{color:var(--brand-2);font-weight:800}
   .talk-card{padding:1rem;border-radius:22px;}
   .talk-date{font-size:.78rem;}
 }
+
+
+/* v15: sección Sponsor y popup de contacto */
+.topbar nav a[href="#sponsor"]{color:var(--brand-2)}
+.sponsor-section{background:rgba(255,255,255,.018)}
+.sponsor-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:1.4rem;align-items:stretch;max-width:1180px;margin:0 auto}
+.sponsor-card{border:1px solid var(--line);border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));box-shadow:0 20px 62px rgba(0,0,0,.22);padding:1.6rem;display:flex;flex-direction:column;justify-content:center}
+.sponsor-label{display:inline-flex;width:max-content;margin-bottom:1rem;padding:.48rem .8rem;border-radius:999px;border:1px solid rgba(91,215,255,.32);background:rgba(0,174,255,.12);color:var(--brand-2);font-weight:900;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em}
+.main-sponsor img{width:100%;max-width:760px;margin:0 auto 1rem;display:block;filter:drop-shadow(0 12px 28px rgba(0,0,0,.35))}
+.main-sponsor p,.sponsor-call p{color:var(--muted);line-height:1.6;margin:.4rem 0 0}
+.sponsor-call h3{font-size:clamp(1.7rem,3vw,2.5rem);margin:.2rem 0 .8rem;color:var(--white)}
+.sponsor-actions{display:flex;gap:.85rem;flex-wrap:wrap;margin-top:1.3rem}.sponsor-actions .btn{justify-content:center}
+.contact-dialog{width:min(920px,calc(100vw - 28px));border:1px solid rgba(91,215,255,.28);border-radius:28px;padding:0;background:transparent;color:var(--text);box-shadow:0 28px 90px rgba(0,0,0,.55)}
+.contact-dialog::backdrop{background:rgba(1,6,14,.72);backdrop-filter:blur(8px)}
+.contact-form{position:relative;margin:0;max-height:calc(100vh - 40px);overflow:auto}.contact-form h2{margin:.15rem 0 1rem;font-size:clamp(1.7rem,3vw,2.4rem)}
+.dialog-close{position:absolute;right:18px;top:14px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.08);color:var(--text);font-size:1.7rem;line-height:1;cursor:pointer}.dialog-close:hover{background:rgba(91,215,255,.16)}
+@media(max-width:900px){.sponsor-layout{grid-template-columns:1fr}.sponsor-card{padding:1.15rem}.sponsor-actions .btn{width:100%}.main-sponsor img{max-width:100%}}
+
+/* v15: panel solo con tabla y sorteos */
+.answers-list,.answer-card{display:none !important}
+
+
+/* v16: Sponsor más compacto y logo UCA controlado */
+.sponsor-section .section-title{
+  margin-bottom:1.6rem;
+}
+.sponsor-layout{
+  align-items:stretch;
+}
+.sponsor-card.main-sponsor{
+  overflow:hidden;
+}
+.sponsor-logo-box{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:150px;
+  margin:.4rem auto 1.1rem;
+  padding:1rem;
+  border-radius:22px;
+  background:rgba(0,0,0,.28);
+  border:1px solid rgba(255,255,255,.08);
+}
+.main-sponsor .sponsor-logo-box img,
+.main-sponsor img{
+  width:100% !important;
+  max-width:560px !important;
+  max-height:170px !important;
+  height:auto !important;
+  object-fit:contain !important;
+  margin:0 auto !important;
+  display:block !important;
+}
+.sponsor-call h3{
+  max-width:520px;
+}
+@media(max-width:900px){
+  .sponsor-logo-box{min-height:120px;padding:.7rem;}
+  .main-sponsor .sponsor-logo-box img,
+  .main-sponsor img{max-width:100% !important;max-height:140px !important;}
+}
+
+/* v16: Panel de resultados sin detalle de respuestas */
+.panel-hero .lead{max-width:780px;}
+.answers-list,
+.answer-card,
+#respuestasLista,
+.respuestas-list,
+.respuestas-recibidas,
+.correccion-section{
+  display:none !important;
+  visibility:hidden !important;
+  height:0 !important;
+  overflow:hidden !important;
+  margin:0 !important;
+  padding:0 !important;
+}

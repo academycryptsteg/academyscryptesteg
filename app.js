@@ -99,3 +99,74 @@ form.addEventListener('submit', async (e) => {
     msg.textContent = 'No se pudo guardar el registro. Revisá la configuración de Supabase.';
   }
 });
+
+
+// Contacto para sponsors y voluntarios
+const contactDialog = document.getElementById('contactDialog');
+const contactForm = document.getElementById('contactForm');
+const contactMsg = document.getElementById('contactMsg');
+const contactTipo = document.getElementById('contactTipo');
+const contactTitle = document.getElementById('contactTitle');
+
+document.querySelectorAll('[data-open-contact]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const tipo = btn.dataset.openContact || 'sponsor';
+    contactTipo.value = tipo;
+    contactTitle.textContent = tipo === 'voluntario' ? 'Anotarme como voluntario' : 'Quiero ser sponsor';
+    contactMsg.textContent = '';
+    contactMsg.className = 'form-msg';
+    if(contactDialog && typeof contactDialog.showModal === 'function') contactDialog.showModal();
+  });
+});
+
+document.querySelector('.dialog-close')?.addEventListener('click', () => contactDialog?.close());
+contactDialog?.addEventListener('click', (e) => {
+  if(e.target === contactDialog) contactDialog.close();
+});
+
+contactForm?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const fd = new FormData(contactForm);
+  const payload = {
+    tipo: String(fd.get('tipo') || 'sponsor').trim(),
+    nombre: String(fd.get('nombre') || '').trim(),
+    email: String(fd.get('email') || '').trim(),
+    organizacion: String(fd.get('organizacion') || '').trim(),
+    telefono: String(fd.get('telefono') || '').trim(),
+    mensaje: String(fd.get('mensaje') || '').trim(),
+    page_url: window.location.href,
+    user_agent: navigator.userAgent
+  };
+
+  if(!payload.nombre || !payload.email){
+    contactMsg.className = 'form-msg bad';
+    contactMsg.textContent = 'Completá nombre y correo electrónico.';
+    return;
+  }
+
+  contactMsg.className = 'form-msg';
+  contactMsg.textContent = 'Enviando contacto...';
+
+  try{
+    if(!supabaseClient){
+      console.warn('Supabase no configurado. Contacto:', payload);
+      contactMsg.className = 'form-msg ok';
+      contactMsg.textContent = 'Contacto listo. Falta configurar Supabase para guardarlo.';
+      return;
+    }
+
+    const { error } = await supabaseClient
+      .from(cfg.CONTACTOS_TABLE || 'expo_contactos_sponsor')
+      .insert(payload);
+
+    if(error) throw error;
+    contactForm.reset();
+    contactMsg.className = 'form-msg ok';
+    contactMsg.textContent = 'Gracias. Recibimos tus datos y te vamos a contactar.';
+    setTimeout(() => contactDialog?.close(), 1200);
+  }catch(error){
+    console.error(error);
+    contactMsg.className = 'form-msg bad';
+    contactMsg.textContent = 'No se pudo guardar el contacto. Revisá la configuración de Supabase.';
+  }
+});
