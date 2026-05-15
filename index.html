@@ -20,6 +20,7 @@
       <a href="#registro">Registro</a>
       <a href="desafios.html">Desafíos</a>
       <a href="#charlas">Charlas</a>
+      <a href="#sponsor">Sponsor</a>
       <a href="#qr">QR</a>
       <a href="panel.html">Resultados</a>
       <a href="#materiales">Materiales</a>
@@ -176,6 +177,60 @@
         <div id="registroGuardado" class="registro-guardado" hidden></div>
       </form>
     </section>
+
+
+    <section id="sponsor" class="section sponsor-section">
+      <div class="section-title">
+        <p class="eyebrow">Sponsor y voluntariado</p>
+        <h2>Sumate a CRYPT-STEG</h2>
+        <p>Querés ser nuestro sponsor o colaborar como voluntario? Escribinos. Toda ayuda es bienvenida para seguir ampliando esta experiencia.</p>
+      </div>
+
+      <div class="sponsor-layout">
+        <article class="sponsor-card main-sponsor">
+          <span class="sponsor-label">Sponsor institucional</span>
+          <img src="assets/uca-facultad.png" alt="UCA Facultad de Ingeniería y Ciencias Agrarias" />
+          <p>CRYPT-STEG cuenta con el acompañamiento institucional de la Facultad de Ingeniería y Ciencias Agrarias.</p>
+        </article>
+
+        <article class="sponsor-card sponsor-call">
+          <h3>Querés acompañar la actividad?</h3>
+          <p>Podés escribirnos para colaborar como sponsor, aportar recursos, materiales, premios, difusión o sumarte como voluntario.</p>
+          <div class="sponsor-actions">
+            <button class="btn primary" type="button" data-open-contact="sponsor">Quiero ser sponsor</button>
+            <button class="btn ghost" type="button" data-open-contact="voluntario">Anotarme como voluntario</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <dialog id="contactDialog" class="contact-dialog">
+      <form id="contactForm" method="dialog" class="form-card contact-form">
+        <button class="dialog-close" type="button" aria-label="Cerrar formulario">×</button>
+        <p class="eyebrow">Contacto</p>
+        <h2 id="contactTitle">Sumarme a CRYPT-STEG</h2>
+        <input type="hidden" name="tipo" id="contactTipo" value="sponsor" />
+        <div class="form-grid">
+          <label>Nombre y apellido *
+            <input name="nombre" type="text" placeholder="Ej.: Juan Pérez" required />
+          </label>
+          <label>Correo electrónico *
+            <input name="email" type="email" placeholder="nombre@correo.com" required />
+          </label>
+          <label>Organización / institución
+            <input name="organizacion" type="text" placeholder="Opcional" />
+          </label>
+          <label>Teléfono / WhatsApp
+            <input name="telefono" type="text" placeholder="Opcional" />
+          </label>
+        </div>
+        <label>Mensaje
+          <textarea name="mensaje" rows="4" placeholder="Contanos cómo te gustaría colaborar."></textarea>
+        </label>
+        <button class="btn primary submit" type="submit">Enviar contacto</button>
+        <p id="contactMsg" class="form-msg" role="status"></p>
+      </form>
+    </dialog>
 
     <section id="qr" class="section qr-section">
       <div>
