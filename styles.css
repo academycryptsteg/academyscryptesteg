@@ -183,3 +183,38 @@ footer a{color:var(--brand-2);font-weight:800}
 .mini-stats{grid-template-columns:repeat(5,1fr) !important;}
 @media(max-width:1100px){.mini-stats{grid-template-columns:repeat(3,1fr) !important;}}
 @media(max-width:680px){.mini-stats{grid-template-columns:1fr !important;}}
+
+
+/* v13: botón final para volver al inicio desde desafíos */
+.challenge-finish-actions{
+  max-width:720px;
+  margin:2.2rem auto 0;
+  padding:1.4rem;
+  text-align:center;
+  border:1px solid var(--line);
+  border-radius:26px;
+  background:linear-gradient(180deg,rgba(0,174,255,.14),rgba(255,255,255,.045));
+  box-shadow:0 16px 42px rgba(0,0,0,.18);
+}
+.challenge-finish-actions h3{
+  margin:.1rem 0 .45rem;
+  font-size:clamp(1.35rem,2.5vw,2rem);
+}
+.challenge-finish-actions p{
+  margin:0 auto 1rem;
+  max-width:560px;
+  color:var(--muted);
+  line-height:1.55;
+}
+.challenge-finish-actions .btn{
+  justify-content:center;
+}
+@media(max-width:680px){
+  .challenge-finish-actions{
+    margin-top:1.4rem;
+    padding:1rem;
+  }
+  .challenge-finish-actions .btn{
+    width:100%;
+  }
+}
