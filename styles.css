@@ -146,3 +146,12 @@ h1 span{color:var(--brand-2)}
     border-radius:14px;
   }
 }
+
+/* v8: charlas, participación sin registro y panel de resultados */
+.mini-stats{grid-template-columns:repeat(4,1fr)}
+.talks-grid{max-width:1120px;margin:0 auto}.talks-section{background:rgba(255,255,255,.018)}
+.participant-card{border:1px solid var(--line);background:rgba(255,255,255,.06);border-radius:24px;padding:1.1rem;max-width:620px;margin-top:1.4rem;box-shadow:0 16px 38px rgba(0,0,0,.18)}
+.participant-card label{margin-bottom:.8rem}.participant-card .btn{width:100%}
+.panel-hero{grid-template-columns:1.15fr .85fr}.panel-controls{display:grid;grid-template-columns:minmax(220px,320px) auto;gap:1rem;align-items:end;margin-top:1.5rem}.panel-controls label{margin:0}.panel-section{padding-top:3.5rem}.panel-grid{display:grid;grid-template-columns:repeat(2,minmax(280px,1fr));gap:1.3rem}.panel-card,.winner-box,.answer-card,.table-wrap{border:1px solid var(--line);border-radius:26px;background:rgba(255,255,255,.055);box-shadow:0 16px 42px rgba(0,0,0,.2)}.panel-card{padding:1.4rem}.panel-card h2{font-size:clamp(1.55rem,3vw,2.4rem);margin:.2rem 0 .6rem}.panel-card p{color:var(--muted);line-height:1.55}.winner-box{margin-top:1rem;padding:1rem;min-height:110px}.winner-box h3{font-size:1.45rem;color:var(--brand-2);margin:.2rem 0}.table-wrap{overflow:auto}.data-table{width:100%;border-collapse:collapse;min-width:680px}.data-table th,.data-table td{padding:1rem;border-bottom:1px solid var(--line);text-align:left}.data-table th{color:var(--brand-2);font-size:.88rem;text-transform:uppercase;letter-spacing:.08em}.data-table tr:last-child td{border-bottom:0}.answers-list{display:grid;gap:1rem;max-width:1100px;margin:0 auto}.answer-card{padding:1.1rem}.answer-card div:first-child{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}.answer-card span{color:var(--brand-2);font-weight:800}.answer-card p{color:var(--muted);line-height:1.5}.answer-actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.8rem}
+footer a{color:var(--brand-2);font-weight:800}
+@media(max-width:880px){.mini-stats{grid-template-columns:1fr}.panel-hero,.panel-grid,.panel-controls{grid-template-columns:1fr}.talks-grid{grid-template-columns:1fr}}

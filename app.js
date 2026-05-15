@@ -91,7 +91,7 @@ form.addEventListener('submit', async (e) => {
     msg.textContent = 'Registro enviado correctamente. ¡Gracias por participar!';
     if(registroGuardado){
       registroGuardado.hidden = false;
-      registroGuardado.innerHTML = `<strong>ID de registro:</strong> ${data.id}<br><a class="btn ghost small" href="desafios.html">Continuar a los desafíos interactivos</a>`;
+      registroGuardado.innerHTML = `<strong>Registro guardado.</strong><br><a class="btn ghost small" href="desafios.html">Continuar a los desafíos interactivos</a>`;
     }
   }catch(error){
     console.error(error);

@@ -17,6 +17,7 @@
     </a>
     <nav>
       <a href="index.html#registro">Registro</a>
+      <a href="index.html#charlas">Charlas</a>
       <a href="#desafios">Desafíos</a>
       <a href="index.html#qr">QR</a>
     </nav>
@@ -27,11 +28,20 @@
       <div class="hero-copy">
         <p class="eyebrow">Zona de resolución · Actividad interactiva</p>
         <h1>Desafíos interactivos <span>CRYPT-STEG</span></h1>
-        <p class="lead">Completá cada mensaje claro y participá de los desafíos de criptografía clásica.</p>
+        <p class="lead">No hace falta registrarse para jugar. Escribí tu nombre, resolvé los desafíos y participá del ranking del día.</p>
+
+        <form id="participanteForm" class="participant-card">
+          <label>Nombre para participar *
+            <input id="participanteNombre" name="nombre" type="text" placeholder="Ej.: Juan Pérez" required />
+          </label>
+          <button class="btn primary" type="submit">Guardar nombre</button>
+          <p id="participanteMsg" class="form-msg" role="status"></p>
+        </form>
+
         <div id="registroEstado" class="notice"></div>
         <div class="hero-actions">
-          <a class="btn primary" href="index.html#registro">Ir al registro</a>
-          <a class="btn ghost" href="#barbie">Resolver desafíos</a>
+          <a class="btn primary" href="#barbie">Resolver desafíos</a>
+          <a class="btn ghost" href="index.html#registro">Registro completo opcional</a>
         </div>
       </div>
       <div class="hero-card small-card">

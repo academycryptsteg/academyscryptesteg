@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRYPT-STEG | Panel de resultados</title>
+  <link rel="icon" href="assets/iso-color.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="CRYPT-STEG inicio">
+      <img src="assets/iso-color.png" alt="Isotipo CRYPT-STEG" />
+      <span>CRYPT-STEG</span>
+    </a>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="desafios.html">Desafíos</a>
+      <a href="#sorteo">Sorteo</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero compact-hero panel-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Panel interno</p>
+        <h1>Resultados y sorteos <span>CRYPT-STEG</span></h1>
+        <p class="lead">Seleccioná la fecha, revisá los puntajes, marcá respuestas correctas y generá ganadores por mérito o sorteo.</p>
+        <div class="panel-controls">
+          <label>Fecha del evento
+            <input id="fechaEvento" type="date" />
+          </label>
+          <button id="btnCargar" class="btn primary" type="button">Cargar datos</button>
+        </div>
+        <div id="panelMsg" class="notice"></div>
+      </div>
+      <div class="hero-card small-card">
+        <img class="main-logo" src="assets/logo-color.png" alt="Logo CRYPT-STEG" />
+      </div>
+    </section>
+
+    <section id="sorteo" class="section panel-section">
+      <div class="panel-grid">
+        <article class="panel-card">
+          <p class="eyebrow">Ganador por mérito</p>
+          <h2>Mayor cantidad de desafíos correctos</h2>
+          <p>Excluye automáticamente a participantes que ya ganaron en días anteriores.</p>
+          <button id="btnGanadorMerito" class="btn primary" type="button">Mostrar ganador</button>
+          <div id="ganadorMerito" class="winner-box"></div>
+        </article>
+
+        <article class="panel-card">
+          <p class="eyebrow">Sorteo</p>
+          <h2>Ganador aleatorio</h2>
+          <p>Randomiza entre participantes del día que no hayan ganado antes y que no sean el ganador por mérito.</p>
+          <button id="btnSorteo" class="btn primary" type="button">Sorteo</button>
+          <div id="ganadorSorteo" class="winner-box"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section panel-section">
+      <div class="section-title">
+        <p class="eyebrow">Ranking diario</p>
+        <h2>Participantes y puntajes</h2>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Participante</th>
+              <th>Correctas</th>
+              <th>Respuestas</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody id="rankingBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section panel-section">
+      <div class="section-title">
+        <p class="eyebrow">Corrección</p>
+        <h2>Respuestas recibidas</h2>
+        <p>Cuando una respuesta esté bien, marcala como correcta para que sume 1 punto. Si está mal, marcala como incorrecta.</p>
+      </div>
+      <div id="respuestasLista" class="answers-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="assets/logo-byn.png" alt="CRYPT-STEG" />
+    <p>CRYPT-STEG · Panel de resultados</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="panel.js"></script>
+</body>
+</html>
