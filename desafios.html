@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRYPT-STEG | Desafíos interactivos</title>
+  <meta name="description" content="Desafíos interactivos de criptografía y esteganografía CRYPT-STEG." />
+  <link rel="icon" href="assets/iso-color.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="CRYPT-STEG inicio">
+      <img src="assets/iso-color.png" alt="Isotipo CRYPT-STEG" />
+      <span>CRYPT-STEG</span>
+    </a>
+    <nav>
+      <a href="index.html#registro">Registro</a>
+      <a href="#desafios">Desafíos</a>
+      <a href="index.html#qr">QR</a>
+    </nav>
+  </header>
+
+  <main id="desafios">
+    <section class="hero compact-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Zona de resolución · Actividad interactiva</p>
+        <h1>Desafíos interactivos <span>CRYPT-STEG</span></h1>
+        <p class="lead">Completá cada mensaje claro y participá de los desafíos de criptografía clásica.</p>
+        <div id="registroEstado" class="notice"></div>
+        <div class="hero-actions">
+          <a class="btn primary" href="index.html#registro">Ir al registro</a>
+          <a class="btn ghost" href="#barbie">Resolver desafíos</a>
+        </div>
+      </div>
+      <div class="hero-card small-card">
+        <img class="main-logo" src="assets/logo-color.png" alt="Logo CRYPT-STEG" />
+      </div>
+    </section>
+
+    <section id="barbie" class="section challenge-section">
+      <div class="section-title">
+        <p class="eyebrow">Desafío 1</p>
+        <h2>El cifrador de Barbie</h2>
+        <p>Alice encontró mensajes cifrados entre Bob y Barbie. ¿Podés ayudarla a confirmar o descartar sus sospechas?</p>
+      </div>
+      <form class="challenge-card challenge-form" data-desafio="barbie">
+        <div class="cipher-box">
+          <p>&gt;ZNSNELELZN FNF…….<br>BD RBIEITI CIC…..<br>…….NPKS JLT HUOFJTO ASTAUO<br>….. OGNCVHN IQJEZEYGSN<br>…….EYGSN CN SEN CEY…….<br>&gt;Z&gt;ULELZN FNF…….<br>RUD&gt;H RUD&gt;H BDU XH&gt;HT RUD&gt;H</p>
+        </div>
+        <label>Mensaje claro / interpretación
+          <textarea name="respuesta" rows="5" placeholder="Escribí acá la respuesta o interpretación del mensaje cifrado" required></textarea>
+        </label>
+        <label>Observaciones del participante
+          <textarea name="observaciones" rows="3" placeholder="Opcional: cómo lo resolviste, pistas usadas o dudas"></textarea>
+        </label>
+        <button class="btn primary" type="submit">Guardar respuesta</button>
+        <p class="form-msg" role="status"></p>
+      </form>
+    </section>
+
+    <section class="section challenge-section">
+      <div class="section-title">
+        <p class="eyebrow">Desafíos visuales</p>
+        <h2>Criptografía clásica</h2>
+        <p>Leé la pista, descifrá el mensaje y escribí tu respuesta en el campo correspondiente.</p>
+      </div>
+
+      <div class="challenge-grid">
+        <form class="challenge-card challenge-form" data-desafio="pigpen">
+          <h3>Pista: Cifrado Pigpen</h3>
+          <img class="challenge-img" src="assets/desafio-ejercicio-1.png" alt="Ejercicio de cifrado Pigpen" />
+          <label>Mensaje claro
+            <input name="respuesta" type="text" placeholder="Escribí el mensaje descifrado" required />
+          </label>
+          <label>Observaciones
+            <textarea name="observaciones" rows="2" placeholder="Opcional"></textarea>
+          </label>
+          <button class="btn primary" type="submit">Guardar respuesta</button>
+          <p class="form-msg" role="status"></p>
+        </form>
+
+        <form class="challenge-card challenge-form" data-desafio="polybius">
+          <h3>Pista: Cuadrado de Polybius</h3>
+          <img class="challenge-img" src="assets/desafio-ejercicio-2.png" alt="Ejercicio de cuadrado de Polybius" />
+          <label>Mensaje claro
+            <input name="respuesta" type="text" placeholder="Escribí el mensaje descifrado" required />
+          </label>
+          <label>Observaciones
+            <textarea name="observaciones" rows="2" placeholder="Opcional"></textarea>
+          </label>
+          <button class="btn primary" type="submit">Guardar respuesta</button>
+          <p class="form-msg" role="status"></p>
+        </form>
+
+        <form class="challenge-card challenge-form" data-desafio="vigenere_1">
+          <h3>Pista: Cifrado de Vigenère</h3>
+          <img class="challenge-img" src="assets/desafio-ejercicio-3.png" alt="Ejercicio de cifrado de Vigenère 1" />
+          <label>Mensaje claro
+            <input name="respuesta" type="text" placeholder="Escribí el mensaje descifrado" required />
+          </label>
+          <label>Clave utilizada
+            <input name="clave" type="text" placeholder="Opcional" />
+          </label>
+          <label>Observaciones
+            <textarea name="observaciones" rows="2" placeholder="Opcional"></textarea>
+          </label>
+          <button class="btn primary" type="submit">Guardar respuesta</button>
+          <p class="form-msg" role="status"></p>
+        </form>
+
+        <form class="challenge-card challenge-form" data-desafio="vigenere_2">
+          <h3>Pista: Cifrado de Vigenère</h3>
+          <img class="challenge-img" src="assets/desafio-ejercicio-4.png" alt="Ejercicio de cifrado de Vigenère 2" />
+          <label>Mensaje claro
+            <input name="respuesta" type="text" placeholder="Escribí el mensaje descifrado" required />
+          </label>
+          <label>Clave utilizada
+            <input name="clave" type="text" placeholder="Opcional" />
+          </label>
+          <label>Observaciones
+            <textarea name="observaciones" rows="2" placeholder="Opcional"></textarea>
+          </label>
+          <button class="btn primary" type="submit">Guardar respuesta</button>
+          <p class="form-msg" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="assets/logo-byn.png" alt="CRYPT-STEG" />
+    <p>CRYPT-STEG · Criptografía y Esteganografía</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="desafios.js"></script>
+</body>
+</html>
